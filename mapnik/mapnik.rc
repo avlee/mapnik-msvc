@@ -1,0 +1,37 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+#include "..\..\include\mapnik\version.hpp"
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION MAPNIK_MAJOR_VERSION,MAPNIK_MINOR_VERSION,MAPNIK_PATCH_VERSION,0
+ PRODUCTVERSION MAPNIK_MAJOR_VERSION,MAPNIK_MINOR_VERSION,MAPNIK_PATCH_VERSION,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4" /* Language type = U.S English(0x0409) and Character Set = Windows, Multilingual(0x04E4) */
+        BEGIN
+            VALUE "CompanyName", "http://mapnik.org"
+            VALUE "FileDescription", "Mapnik is an open source toolkit for developing mapping applications"
+            VALUE "FileVersion", MAPNIK_VERSION_STRING "\000"
+            VALUE "InternalName", "mapnik"
+            VALUE "LegalCopyright", "Mapnik software is free and is released under LGPL (GNU Lesser General Public License. Please see COPYING for more information."
+            VALUE "OriginalFilename", "mapnik.dll"
+            VALUE "ProductName", "mapnik"
+            VALUE "ProductVersion", MAPNIK_VERSION_STRING "\000"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04E4
+    END
+END

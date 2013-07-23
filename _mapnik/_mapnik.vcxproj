@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B9340611-349B-4FF7-A690-59E437393EB5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>_mapnik</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.pyd</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.pyd</TargetExt>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_MAPNIK_EXPORTS;MAPNIK_DEBUG;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BIGINT;BOOST_REGEX_HAS_ICU;BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>python27.lib;mapnik.lib;agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;proj_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_MAPNIK_EXPORTS;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BIGINT;BOOST_REGEX_HAS_ICU;BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>python27.lib;mapnik.lib;agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;proj_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\bindings\python\mapnik_building_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_color.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_coord.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_datasource.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_datasource_cache.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_debug_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_envelope.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_expression.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_feature.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_featureset.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_fontset.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_font_engine.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_gamma_method.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_geometry.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_grid.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_grid_view.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_image.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_image_view.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_label_collision_detector.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_layer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_line_pattern_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_line_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_logger.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_map.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_markers_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_palette.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_parameters.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_point_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_polygon_pattern_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_polygon_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_projection.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_proj_transform.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_python.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_query.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_raster_colorizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_raster_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_rule.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_scaling_method.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_shield_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_stroke.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_style.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_symbolizer.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_text_placement.cpp" />
+    <ClCompile Include="..\..\bindings\python\mapnik_view_transform.cpp" />
+    <ClCompile Include="..\..\bindings\python\python_cairo.cpp" />
+    <ClCompile Include="..\..\bindings\python\python_grid_utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\bindings\python\mapnik_enumeration.hpp" />
+    <ClInclude Include="..\..\bindings\python\mapnik_svg.hpp" />
+    <ClInclude Include="..\..\bindings\python\mapnik_threads.hpp" />
+    <ClInclude Include="..\..\bindings\python\mapnik_value_converter.hpp" />
+    <ClInclude Include="..\..\bindings\python\python_grid_utils.hpp" />
+    <ClInclude Include="..\..\bindings\python\python_optional.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

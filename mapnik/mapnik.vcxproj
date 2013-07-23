@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD3FABB-19EA-4888-97FA-A6C93E61C560}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mapnik</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAPNIK_EXPORTS;NOMINMAX;MAPNIK_DEBUG;MAPNIK_THREADSAFE;MAPNIK_USE_PROJ4;HAVE_LIBXML2;HAVE_PNG;HAVE_JPEG;HAVE_TIFF;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;..\..\..\..\Common\boost_1_49_0;..\..\;..\..\include;..\..\..\mapnik-deps\include;$(IncludePath)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4345;4661;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;libpng15.lib;zlib.lib;proj_i.lib;libxml2.lib;libjpeg.lib;libtiff.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MAPNIK_EXPORTS;NOMINMAX;MAPNIK_THREADSAFE;MAPNIK_USE_PROJ4;HAVE_LIBXML2;HAVE_PNG;HAVE_JPEG;HAVE_TIFF;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;..\..\..\..\Common\boost_1_49_0;..\..\;..\..\include;..\..\..\mapnik-deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819;4345;4661;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;libpng15.lib;zlib.lib;proj_i.lib;libxml2.lib;libjpeg.lib;libtiff.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\deps\clipper\include\clipper.hpp" />
+    <ClInclude Include="..\..\include\mapnik\agg_helpers.hpp" />
+    <ClInclude Include="..\..\include\mapnik\agg_pattern_source.hpp" />
+    <ClInclude Include="..\..\include\mapnik\agg_rasterizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\agg_renderer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\attribute.hpp" />
+    <ClInclude Include="..\..\include\mapnik\attribute_collector.hpp" />
+    <ClInclude Include="..\..\include\mapnik\attribute_descriptor.hpp" />
+    <ClInclude Include="..\..\include\mapnik\boolean.hpp" />
+    <ClInclude Include="..\..\include\mapnik\box2d.hpp" />
+    <ClInclude Include="..\..\include\mapnik\building_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\cairo_context.hpp" />
+    <ClInclude Include="..\..\include\mapnik\cairo_renderer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\color.hpp" />
+    <ClInclude Include="..\..\include\mapnik\color_factory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\config.hpp" />
+    <ClInclude Include="..\..\include\mapnik\config_error.hpp" />
+    <ClInclude Include="..\..\include\mapnik\coord.hpp" />
+    <ClInclude Include="..\..\include\mapnik\coord_array.hpp" />
+    <ClInclude Include="..\..\include\mapnik\css_color_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\ctrans.hpp" />
+    <ClInclude Include="..\..\include\mapnik\datasource.hpp" />
+    <ClInclude Include="..\..\include\mapnik\datasource_cache.hpp" />
+    <ClInclude Include="..\..\include\mapnik\debug.hpp" />
+    <ClInclude Include="..\..\include\mapnik\debug_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\distance.hpp" />
+    <ClInclude Include="..\..\include\mapnik\ellipsoid.hpp" />
+    <ClInclude Include="..\..\include\mapnik\enumeration.hpp" />
+    <ClInclude Include="..\..\include\mapnik\expression_evaluator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\expression_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\expression_node.hpp" />
+    <ClInclude Include="..\..\include\mapnik\expression_string.hpp" />
+    <ClInclude Include="..\..\include\mapnik\factory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\fastmath.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature_factory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature_kv_iterator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature_layer_desc.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature_style_processor.hpp" />
+    <ClInclude Include="..\..\include\mapnik\feature_type_style.hpp" />
+    <ClInclude Include="..\..\include\mapnik\filter_factory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\filter_featureset.hpp" />
+    <ClInclude Include="..\..\include\mapnik\font_engine_freetype.hpp" />
+    <ClInclude Include="..\..\include\mapnik\font_set.hpp" />
+    <ClInclude Include="..\..\include\mapnik\formatting\base.hpp" />
+    <ClInclude Include="..\..\include\mapnik\formatting\format.hpp" />
+    <ClInclude Include="..\..\include\mapnik\formatting\list.hpp" />
+    <ClInclude Include="..\..\include\mapnik\formatting\registry.hpp" />
+    <ClInclude Include="..\..\include\mapnik\formatting\text.hpp" />
+    <ClInclude Include="..\..\include\mapnik\gamma_method.hpp" />
+    <ClInclude Include="..\..\include\mapnik\geometry.hpp" />
+    <ClInclude Include="..\..\include\mapnik\geom_util.hpp" />
+    <ClInclude Include="..\..\include\mapnik\global.hpp" />
+    <ClInclude Include="..\..\include\mapnik\gradient.hpp" />
+    <ClInclude Include="..\..\include\mapnik\graphics.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_pixel.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_pixfmt.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_rasterizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_renderer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_rendering_buffer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_util.hpp" />
+    <ClInclude Include="..\..\include\mapnik\grid\grid_view.hpp" />
+    <ClInclude Include="..\..\include\mapnik\hash_variant.hpp" />
+    <ClInclude Include="..\..\include\mapnik\hextree.hpp" />
+    <ClInclude Include="..\..\include\mapnik\hit_test_filter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_compositing.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_data.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_filter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_filter_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_filter_types.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_reader.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_scaling.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_util.hpp" />
+    <ClInclude Include="..\..\include\mapnik\image_view.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\feature_collection_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\feature_collection_parser.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\feature_generator_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\feature_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\geojson_generator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\json\geometry_generator_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\label_collision_detector.hpp" />
+    <ClInclude Include="..\..\include\mapnik\layer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\line_pattern_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\line_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\load_map.hpp" />
+    <ClInclude Include="..\..\include\mapnik\map.hpp" />
+    <ClInclude Include="..\..\include\mapnik\mapped_memory_cache.hpp" />
+    <ClInclude Include="..\..\include\mapnik\marker.hpp" />
+    <ClInclude Include="..\..\include\mapnik\markers_placement.hpp" />
+    <ClInclude Include="..\..\include\mapnik\markers_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\marker_cache.hpp" />
+    <ClInclude Include="..\..\include\mapnik\memory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\memory_datasource.hpp" />
+    <ClInclude Include="..\..\include\mapnik\memory_featureset.hpp" />
+    <ClInclude Include="..\..\include\mapnik\octree.hpp" />
+    <ClInclude Include="..\..\include\mapnik\offset_converter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\palette.hpp" />
+    <ClInclude Include="..\..\include\mapnik\params.hpp" />
+    <ClInclude Include="..\..\include\mapnik\parse_path.hpp" />
+    <ClInclude Include="..\..\include\mapnik\path_expression_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\placement_finder.hpp" />
+    <ClInclude Include="..\..\include\mapnik\plugin.hpp" />
+    <ClInclude Include="..\..\include\mapnik\png_io.hpp" />
+    <ClInclude Include="..\..\include\mapnik\point_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\polygon_clipper.hpp" />
+    <ClInclude Include="..\..\include\mapnik\polygon_pattern_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\polygon_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\pool.hpp" />
+    <ClInclude Include="..\..\include\mapnik\projection.hpp" />
+    <ClInclude Include="..\..\include\mapnik\proj_transform.hpp" />
+    <ClInclude Include="..\..\include\mapnik\ptree_helpers.hpp" />
+    <ClInclude Include="..\..\include\mapnik\quad_tree.hpp" />
+    <ClInclude Include="..\..\include\mapnik\query.hpp" />
+    <ClInclude Include="..\..\include\mapnik\raster.hpp" />
+    <ClInclude Include="..\..\include\mapnik\raster_colorizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\raster_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\request.hpp" />
+    <ClInclude Include="..\..\include\mapnik\rule.hpp" />
+    <ClInclude Include="..\..\include\mapnik\rule_cache.hpp" />
+    <ClInclude Include="..\..\include\mapnik\save_map.hpp" />
+    <ClInclude Include="..\..\include\mapnik\scale_denominator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\segment.hpp" />
+    <ClInclude Include="..\..\include\mapnik\shield_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\simplify.hpp" />
+    <ClInclude Include="..\..\include\mapnik\simplify_converter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\span_image_filter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\sql_utils.hpp" />
+    <ClInclude Include="..\..\include\mapnik\stroke.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_converter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_parser.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_path_adapter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_path_attributes.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_path_commands.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_path_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_path_parser.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_points_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_renderer_agg.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_storage.hpp" />
+    <ClInclude Include="..\..\include\mapnik\svg\svg_transform_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\symbolizer_hash.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_path.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_placements\base.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_placements\dummy.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_placements\list.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_placements\registry.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_placements\simple.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_properties.hpp" />
+    <ClInclude Include="..\..\include\mapnik\text_symbolizer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\timer.hpp" />
+    <ClInclude Include="..\..\include\mapnik\unicode.hpp" />
+    <ClInclude Include="..\..\include\mapnik\utils.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\container_adapter.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\conversions.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\dasharray_parser.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\deepcopy.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\fs.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_svg_generator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_to_ds_type.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_to_svg.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_to_wkb.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_to_wkt.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\geometry_wkt_generator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\hsl.hpp" />
+    <ClInclude Include="..\..\include\mapnik\util\path_iterator.hpp" />
+    <ClInclude Include="..\..\include\mapnik\value.hpp" />
+    <ClInclude Include="..\..\include\mapnik\value_error.hpp" />
+    <ClInclude Include="..\..\include\mapnik\version.hpp" />
+    <ClInclude Include="..\..\include\mapnik\vertex.hpp" />
+    <ClInclude Include="..\..\include\mapnik\vertex_vector.hpp" />
+    <ClInclude Include="..\..\include\mapnik\warp.hpp" />
+    <ClInclude Include="..\..\include\mapnik\well_known_srs.hpp" />
+    <ClInclude Include="..\..\include\mapnik\wkb.hpp" />
+    <ClInclude Include="..\..\include\mapnik\wkt\wkt_factory.hpp" />
+    <ClInclude Include="..\..\include\mapnik\wkt\wkt_grammar.hpp" />
+    <ClInclude Include="..\..\include\mapnik\xml_loader.hpp" />
+    <ClInclude Include="..\..\include\mapnik\xml_node.hpp" />
+    <ClInclude Include="..\..\include\mapnik\xml_tree.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\deps\clipper\src\clipper.cpp" />
+    <ClCompile Include="..\..\src\agg\agg_renderer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_building_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_debug_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_line_pattern_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_line_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_markers_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_point_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_polygon_pattern_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_polygon_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_raster_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_shield_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\agg\process_text_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\agg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\agg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\box2d.cpp" />
+    <ClCompile Include="..\..\src\building_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\cairo_context.cpp" />
+    <ClCompile Include="..\..\src\cairo_renderer.cpp" />
+    <ClCompile Include="..\..\src\color.cpp" />
+    <ClCompile Include="..\..\src\color_factory.cpp" />
+    <ClCompile Include="..\..\src\config_error.cpp" />
+    <ClCompile Include="..\..\src\conversions.cpp" />
+    <ClCompile Include="..\..\src\css_color_grammar.cpp" />
+    <ClCompile Include="..\..\src\datasource_cache.cpp" />
+    <ClCompile Include="..\..\src\debug.cpp" />
+    <ClCompile Include="..\..\src\debug_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\deepcopy.cpp" />
+    <ClCompile Include="..\..\src\distance.cpp" />
+    <ClCompile Include="..\..\src\expression.cpp" />
+    <ClCompile Include="..\..\src\expression_grammar.cpp" />
+    <ClCompile Include="..\..\src\expression_node.cpp" />
+    <ClCompile Include="..\..\src\expression_string.cpp" />
+    <ClCompile Include="..\..\src\feature_kv_iterator.cpp" />
+    <ClCompile Include="..\..\src\feature_style_processor.cpp" />
+    <ClCompile Include="..\..\src\feature_type_style.cpp" />
+    <ClCompile Include="..\..\src\font_engine_freetype.cpp" />
+    <ClCompile Include="..\..\src\font_set.cpp" />
+    <ClCompile Include="..\..\src\formatting\base.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\formatting\expression.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\formatting\format.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\formatting\list.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\formatting\registry.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\formatting\text.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\formatting\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\formatting\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fs.cpp" />
+    <ClCompile Include="..\..\src\gamma_method.cpp" />
+    <ClCompile Include="..\..\src\gradient.cpp" />
+    <ClCompile Include="..\..\src\graphics.cpp" />
+    <ClCompile Include="..\..\src\grid\grid.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\grid_renderer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_building_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_line_pattern_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_line_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_markers_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_point_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_polygon_pattern_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_polygon_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_raster_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_shield_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grid\process_text_symbolizer.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)grid\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\image_compositing.cpp" />
+    <ClCompile Include="..\..\src\image_filter_grammar.cpp" />
+    <ClCompile Include="..\..\src\image_filter_types.cpp" />
+    <ClCompile Include="..\..\src\image_reader.cpp" />
+    <ClCompile Include="..\..\src\image_scaling.cpp" />
+    <ClCompile Include="..\..\src\image_util.cpp" />
+    <ClCompile Include="..\..\src\jpeg_reader.cpp" />
+    <ClCompile Include="..\..\src\json\feature_collection_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\json\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\json\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\json\feature_grammar.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\json\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\json\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\layer.cpp" />
+    <ClCompile Include="..\..\src\json\geojson_generator.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\json\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\json\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\json\geometry_grammar.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\json\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\json\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\json\geometry_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\json\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\json\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\libxml2_loader.cpp" />
+    <ClCompile Include="..\..\src\line_pattern_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\line_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\load_map.cpp" />
+    <ClCompile Include="..\..\src\map.cpp" />
+    <ClCompile Include="..\..\src\mapped_memory_cache.cpp" />
+    <ClCompile Include="..\..\src\markers_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\marker_cache.cpp" />
+    <ClCompile Include="..\..\src\memory.cpp" />
+    <ClCompile Include="..\..\src\memory_datasource.cpp" />
+    <ClCompile Include="..\..\src\miniz_png.cpp" />
+    <ClCompile Include="..\..\src\palette.cpp" />
+    <ClCompile Include="..\..\src\params.cpp" />
+    <ClCompile Include="..\..\src\parse_path.cpp" />
+    <ClCompile Include="..\..\src\parse_transform.cpp" />
+    <ClCompile Include="..\..\src\path_expression_grammar.cpp" />
+    <ClCompile Include="..\..\src\placement_finder.cpp" />
+    <ClCompile Include="..\..\src\plugin.cpp" />
+    <ClCompile Include="..\..\src\png_reader.cpp" />
+    <ClCompile Include="..\..\src\point_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\polygon_pattern_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\polygon_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\processed_text.cpp" />
+    <ClCompile Include="..\..\src\projection.cpp" />
+    <ClCompile Include="..\..\src\proj_transform.cpp" />
+    <ClCompile Include="..\..\src\raster_colorizer.cpp" />
+    <ClCompile Include="..\..\src\raster_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\request.cpp" />
+    <ClCompile Include="..\..\src\rule.cpp" />
+    <ClCompile Include="..\..\src\save_map.cpp" />
+    <ClCompile Include="..\..\src\scale_denominator.cpp" />
+    <ClCompile Include="..\..\src\shield_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\simplify.cpp" />
+    <ClCompile Include="..\..\src\stroke.cpp" />
+    <ClCompile Include="..\..\src\svg\svg_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\svg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\svg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svg\svg_path_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\svg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\svg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svg\svg_points_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\svg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\svg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svg\svg_transform_parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\svg\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\svg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\symbolizer.cpp" />
+    <ClCompile Include="..\..\src\symbolizer_helpers.cpp" />
+    <ClCompile Include="..\..\src\text_placements\base.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\text_placements\dummy.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\text_placements\list.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\text_placements\registry.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\text_placements\simple.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\text_placements\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\text_properties.cpp" />
+    <ClCompile Include="..\..\src\text_symbolizer.cpp" />
+    <ClCompile Include="..\..\src\tiff_reader.cpp" />
+    <ClCompile Include="..\..\src\transform_expression.cpp" />
+    <ClCompile Include="..\..\src\transform_expression_grammar.cpp" />
+    <ClCompile Include="..\..\src\unicode.cpp" />
+    <ClCompile Include="..\..\src\utils.cpp" />
+    <ClCompile Include="..\..\src\warp.cpp" />
+    <ClCompile Include="..\..\src\well_known_srs.cpp" />
+    <ClCompile Include="..\..\src\wkb.cpp" />
+    <ClCompile Include="..\..\src\wkt\wkt_factory.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\wkt\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\wkt\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wkt\wkt_generator.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\wkt\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\wkt\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\xml_tree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mapnik.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
