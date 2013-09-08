@@ -50,12 +50,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WINDOWS;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include;..\..\deps\agg\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\include;..\..\deps\agg\include;$(BOOST_INCLUDES);$(DEPS_INCLUDES);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>proj_i.lib;mapnik.lib;icuuc.lib;icudt.lib;icuin.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -68,14 +68,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_WINDOWS;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include;..\..\deps\agg\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\include;..\..\deps\agg\include;$(BOOST_INCLUDES);$(DEPS_INCLUDES);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>proj_i.lib;mapnik.lib;icuuc.lib;icudt.lib;icuin.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -83,6 +83,7 @@
     <ClCompile Include="..\..\demo\c++\rundemo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(SolutionDir)\deps.props" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

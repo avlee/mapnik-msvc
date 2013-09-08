@@ -53,12 +53,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_MAPNIK_EXPORTS;MAPNIK_DEBUG;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BIGINT;BOOST_REGEX_HAS_ICU;BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;$(BOOST_INCLUDES);$(DEPS_INCLUDES);D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>python27.lib;mapnik.lib;agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;proj_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -71,14 +71,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_MAPNIK_EXPORTS;MAPNIK_THREADSAFE;HAVE_JPEG;HAVE_CAIRO;BIGINT;BOOST_REGEX_HAS_ICU;BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\include;$(BOOST_INCLUDES);$(DEPS_INCLUDES);D:\Python27\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);D:\Python27\libs;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>python27.lib;mapnik.lib;agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;proj_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -139,6 +139,7 @@
     <ClInclude Include="..\..\bindings\python\python_optional.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(SolutionDir)\deps.props" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

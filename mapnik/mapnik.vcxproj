@@ -51,14 +51,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAPNIK_EXPORTS;NOMINMAX;MAPNIK_DEBUG;MAPNIK_THREADSAFE;MAPNIK_USE_PROJ4;HAVE_LIBXML2;HAVE_PNG;HAVE_JPEG;HAVE_TIFF;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;..\..\..\..\Common\boost_1_49_0;..\..\;..\..\include;..\..\..\mapnik-deps\include;$(IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;$(BOOST_INCLUDES);..\..\;..\..\include;$(DEPS_INCLUDES);$(IncludePath)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4819;4345;4661;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;libpng15.lib;zlib.lib;proj_i.lib;libxml2.lib;libjpeg.lib;libtiff.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,7 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MAPNIK_EXPORTS;NOMINMAX;MAPNIK_THREADSAFE;MAPNIK_USE_PROJ4;HAVE_LIBXML2;HAVE_PNG;HAVE_JPEG;HAVE_TIFF;HAVE_CAIRO;BOOST_REGEX_HAS_ICU;BIGINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;..\..\..\..\Common\boost_1_49_0;..\..\;..\..\include;..\..\..\mapnik-deps\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\deps;..\..\deps\agg\include;..\..\deps\clipper\include;$(BOOST_INCLUDES);..\..\;..\..\include;$(DEPS_INCLUDES);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4819;4345;4661;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
@@ -79,7 +79,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>agg.lib;freetype249.lib;icuuc.lib;icudt.lib;icuin.lib;libpng15.lib;zlib.lib;proj_i.lib;libxml2.lib;libjpeg.lib;libtiff.lib;cairo.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
@@ -542,6 +542,7 @@
     </ResourceCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(SolutionDir)\deps.props" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

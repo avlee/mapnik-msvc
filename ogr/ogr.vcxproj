@@ -54,12 +54,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OGR_EXPORTS;BIGINT;MAPNIK_THREADSAFE;BOOST_REGEX_HAS_ICU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include;..\..\plugins\input\gdal;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;..\..\..\mapnik-deps\gdal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\include;..\..\plugins\input\gdal;$(BOOST_INCLUDES);$(DEPS_INCLUDES);..\..\..\mapnik-deps\gdal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\gdal\lib;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);E:\OpenSource\Geo\mapnik-deps\gdal\lib;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>mapnik.lib;gdal.lib;libexpat.lib;icuuc.lib;icudt.lib;icuin.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -72,14 +72,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OGR_EXPORTS;BIGINT;MAPNIK_THREADSAFE;BOOST_REGEX_HAS_ICU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include;..\..\plugins\input\gdal;..\..\..\..\Common\boost_1_49_0;..\..\..\mapnik-deps\include;..\..\..\mapnik-deps\gdal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\include;..\..\plugins\input\gdal;$(BOOST_INCLUDES);$(DEPS_INCLUDES);..\..\..\mapnik-deps\gdal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>E:\OpenSource\Common\boost_1_49_0\stage\lib;E:\OpenSource\Geo\mapnik-deps\lib;E:\OpenSource\Geo\mapnik-deps\gdal\lib;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS);$(DEPS_LIBS);E:\OpenSource\Geo\mapnik-deps\gdal\lib;$(OutputPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>mapnik.lib;gdal.lib;libexpat.lib;icuuc.lib;icudt.lib;icuin.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -98,6 +98,7 @@
     <ClCompile Include="..\..\plugins\input\ogr\ogr_index_featureset.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(SolutionDir)\deps.props" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
