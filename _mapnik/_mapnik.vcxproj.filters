@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\bindings\python\mapnik_building_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,34 +69,16 @@
     <ClCompile Include="..\..\bindings\python\mapnik_layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_line_pattern_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_line_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_markers_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_palette.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_parameters.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_point_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_polygon_pattern_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_polygon_symbolizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_proj_transform.cpp">
@@ -117,16 +96,10 @@
     <ClCompile Include="..\..\bindings\python\mapnik_raster_colorizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_raster_symbolizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_rule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_scaling_method.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_shield_symbolizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\bindings\python\mapnik_stroke.cpp">
@@ -144,13 +117,10 @@
     <ClCompile Include="..\..\bindings\python\mapnik_view_transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bindings\python\python_cairo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\bindings\python\python_grid_utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\bindings\python\mapnik_debug_symbolizer.cpp">
+    <ClCompile Include="..\..\bindings\python\mapnik_wkt_reader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

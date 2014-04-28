@@ -404,9 +404,6 @@
     <ClInclude Include="..\..\include\mapnik\util\container_adapter.hpp">
       <Filter>Header Files\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\mapnik\util\deepcopy.hpp">
-      <Filter>Header Files\util</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\mapnik\util\geometry_svg_generator.hpp">
       <Filter>Header Files\util</Filter>
     </ClInclude>
@@ -601,6 +598,27 @@
     </ClInclude>
     <ClInclude Include="..\..\deps\clipper\include\clipper.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\feature_style_processor_context.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\json\feature_parser.hpp">
+      <Filter>Header Files\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\util\featureset_buffer.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\webp_io.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\json\generic_json.hpp">
+      <Filter>Header Files\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\json\geometry_grammar.hpp">
+      <Filter>Header Files\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\mapnik\json\geometry_parser.hpp">
+      <Filter>Header Files\json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -808,9 +826,6 @@
     <ClCompile Include="..\..\src\grid\process_text_symbolizer.cpp">
       <Filter>Source Files\grid</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\deepcopy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\symbolizer_helpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -989,6 +1004,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\deps\clipper\src\clipper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\json\feature_parser.cpp">
+      <Filter>Source Files\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\webp_reader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
