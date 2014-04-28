@@ -1,6 +1,6 @@
 # mapnik-msvc
 
-Mapnik projects for Microsoft Visual Studio 2010.
+[Mapnik](https://github.com/mapnik/mapnik) projects for Microsoft Visual Studio 2010.
 
 If you want to build and test mapnik quickly on windows with msvc2010, please checkout and try.
 
