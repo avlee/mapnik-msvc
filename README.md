@@ -1,4 +1,4 @@
-- mapnik-msvc
+# mapnik-msvc
 
 Mapnik projects for Microsoft Visual Studio 2010.
 
@@ -8,12 +8,24 @@ The projects are depend on [mapnik-deps](https://github.com/avlee/mapnik-deps.gi
 
 Usage:
 
+    mkdir mapnik-dev
+    
+    cd mapnik-dev
+    
     git clone https://github.com/mapnik/mapnik.git
+    
     git clone https://github.com/avlee/mapnik-deps.git
+    
     cd mapnik-deps
+    
     unpack
+    
     cd ..
+    
     cd mapnik
+    
     git clone https://github.com/avlee/mapnik-msvc.git
+    
     cd mapnik-msvc
+    
     vcbuild
