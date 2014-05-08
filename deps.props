@@ -3,7 +3,7 @@
 <Project ToolsVersion="4.0"
    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <DEPS_INCLUDES>..\..\..\mapnik-deps\include</DEPS_INCLUDES>
+    <DEPS_INCLUDES>..\..\..\mapnik-deps\include;..\..\..\mapnik-deps\include\boost-1_55</DEPS_INCLUDES>
     <DEPS_LIBS>..\..\..\mapnik-deps\lib</DEPS_LIBS>
     <GDAL_INCLUDES>..\..\..\mapnik-deps\gdal\include</GDAL_INCLUDES>
     <GDAL_LIBS>..\..\..\mapnik-deps\gdal\lib</GDAL_LIBS>
